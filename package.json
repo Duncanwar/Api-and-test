@@ -1,0 +1,30 @@
+{
+  "name": "demoejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "init": "^0.1.2",
+    "mongoose": "^5.9.9",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.1",
+    "should": "^13.2.3",
+    "sinon": "^9.0.2"
+  },
+  "scripts": {
+    "lint": "eslint app.js",
+    "test": "mocha tests/**/*Test.js",
+    "start": " nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
