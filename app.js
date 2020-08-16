@@ -6,16 +6,25 @@ const mongoose = require('mongoose');
 const Book = require('./models/bookModel');
 const bookRouter = require('./routes/bookRouter')(Book);
 
-const db = mongoose.connect('mongodb://localhost/bookAPI');
+const db = mongoose.connect('mongodb://localhost/bookAPI',{
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+});
 // testing integration
 // if(process.env.NODE_ENV == 'Test'){
 //   console.log('This is a test');
 //   console.log(process.env.ENV);
-//   const db = mongoose.connect('mongodb://localhost/bookAPI_Test');
+//   const db = mongoose.connect('mongodb://localhost/bookAPI_Test', {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true
+//   });
 // }else{
 //   console.log('this for real');
-//   console.log(process.env.ENV);
-//    const db = mongoose.connect('mongodb://localhost/bookAPI-prod');
+//    const db = mongoose.connect('mongodb://localhost/bookAPI-prod',
+//    {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true
+//    });
 
 // }
 
