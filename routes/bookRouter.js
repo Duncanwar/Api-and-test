@@ -13,7 +13,7 @@ function router(Book) {
       if (err) {
         return res.sendStatus(404).send(err);
       }
-
+      console.log(book)
       req.book = book;
       return next();
     });
@@ -30,6 +30,7 @@ function router(Book) {
     })
     .put((req, res) => {
       const { book } = req;
+     // console.log(req)
       book.title = req.body.title;
       book.author = req.body.author;
       book.genre = req.body.genre;
@@ -43,10 +44,12 @@ function router(Book) {
     })
     .patch((req, res) => {
       const { book } = req;
-      if (req.body.id) {
+      console.log(book)
+       if (req.body.id) {
         delete req.body.id;
-      }
+       }
       Object.entries(req.body).forEach((item) => {
+        console.log(item)
         const key = item[0];
         const value = item[1];
         book[key] = value;
